@@ -1,0 +1,27 @@
+@use "../utils/colors";
+
+@mixin button($height) {
+  color: colors.$font-color-dirtywhite;
+  background-color: colors.$download-button;
+  height: $height;
+  width: 100px;
+  border: none;
+}
+
+.newsletter-updates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.newsletter .container {
+  padding: 2em;
+}
+
+.updates-form button {
+  @include button(30px);
+}
+
+.updates-form input {
+    height: 30px;
+}

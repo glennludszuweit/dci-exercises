@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 200px;
+}
+
+.container h2 {
+  margin: auto;
+}
+
+.container .box-container {
+  display: flex;
+}
+
+.container .box-container .box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(red, yellow, blue);
+  margin: 50px;
+}
+
+.container .box-container .with-circle:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: red;
+  top: -30px;
+  left: 120px;
+  z-index: 2;
+}
+
+.container .box-container .with-triangle:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(50% 45%, 0% 100%, 100% 100%);
+  background-color: red;
+  top: -55px;
+  left: 120px;
+  z-index: 2;
+}
+
+/* .container .box-container .box .with-circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: red;
+  top: -30px;
+  left: 120px;
+  z-index: 2;
+}
+
+.container .box-container .box .with-triangle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(51% 0, 0% 100%, 100% 100%);
+  background-color: red;
+  top: -30px;
+  left: 120px;
+  z-index: 2;
+} */

@@ -1,0 +1,11 @@
+{
+    "tests": [
+      {
+        "name": "basics",
+        "setup": "npm install",
+        "run": "npm test -- __tests__/basics.js",
+        "timeout": 10,
+        "points": 4
+      }
+    ]
+  }

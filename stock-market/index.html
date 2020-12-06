@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock rates</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="./app.js"></script>
+  </head>
+  <body>
+    <form>
+      <input class="input" type="text" placeholder="Search Stock by Symbol" />
+      <input class="input2" type="text" placeholder="Choose Scope of Data" />
+      <input class="submit" type="submit" value="Search" />
+    </form>
+    <h1></h1>
+
+    <canvas id="myChart" width="400" height="400"></canvas>
+  </body>
+  <script>
+    const input = document.querySelector('.input');
+    const input2 = document.querySelector('.input2');
+    const submitBtn = document.querySelector('.submit');
+
+    const timesStamps = [];
+    const openPrices = [];
+    const companyName = [];
+    const companyLogo = [];
+
+    // async function companySym(symbol) {
+    //   try {
+    //     const key = 'btfnh1748v6rl6gbnml0';
+    //     const url = `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol.toUpperCase()}&token=${key}`;
+
+    //     const res = await fetch(url);
+    //     const data = await res.json();
+
+    //     companyName.push(data.name);
+    //     companyLogo.push(data.logo);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
+
+    // async function candles(symbol, resolution) {
+    //   try {
+    //     const key = 'btfnh1748v6rl6gbnml0';
+    //     const url = `https://finnhub.io/api/v1/stock/candle?symbol=${symbol.toUpperCase()}&resolution=${resolution.toUpperCase()}&from=1572651390&to=1575243390&token=${key}`;
+
+    //     const res = await fetch(url);
+    //     const data = await res.json();
+
+    //     data.t.forEach((timestamp) => {
+    //       console.log(timestamp);
+    //       timesStamps.push(new Date(timestamp).toISOString().slice(0, 10));
+    //     });
+
+    //     data.o.forEach((openPrice) => {
+    //       openPrices.push(openPrice);
+    //     });
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
+
+    // submitBtn.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   candles(input.value, input2.value);
+    //   companySym(input.value);
+    //   input.value = '';
+    //   input2.value = '';
+    // });
+
+    async function candlesSample() {
+      try {
+        const key = 'btfnh1748v6rl6gbnml0';
+        const url = `https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=D&from=1572651390&to=1575243390&token=${key}`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        data.t.forEach((timestamp) => {
+          console.log(timestamp);
+          timesStamps.push(new Date(timestamp).toISOString().slice(0, 10));
+        });
+
+        data.o.forEach((openPrice) => {
+          openPrices.push(openPrice);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function companySymSample() {
+      try {
+        const key = 'btfnh1748v6rl6gbnml0';
+        const url = `https://finnhub.io/api/v1/stock/profile2?symbol=AAPL&token=${key}`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        companyName.push(data.name);
+        companyLogo.push(data.logo);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function disPlayInChart() {
+      await candlesSample();
+      await companySymSample();
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: timesStamps,
+          datasets: [
+            {
+              label: companyName,
+              data: openPrices,
+              backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+              borderColor: ['rgba(255, 99, 132, 1)'],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: false,
+                },
+              },
+            ],
+          },
+        },
+      });
+    }
+
+    disPlayInChart();
+  </script>
+</html>

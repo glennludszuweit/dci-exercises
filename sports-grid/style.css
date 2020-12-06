@@ -1,0 +1,17 @@
+img {
+  width: 100%;
+}
+
+/* Grid reference 1 */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+/* Grid reference 2 */
+/* .container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 15px;
+} */

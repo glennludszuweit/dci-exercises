@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 0 30px;
+
+  .header_img {
+    margin: 0 20px;
+
+    img {
+      height: 300px;
+      width: 400px;
+    }
+  }
+}
+.welcome {
+  h1 {
+    text-align: center;
+    color: blue;
+    text-decoration: underline;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 20px;
+  }
+}

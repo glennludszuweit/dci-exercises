@@ -1,0 +1,44 @@
+@use "../utils/colors";
+@use '../extends/button';
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  // background: colors.$primary-bg;
+  // transition: background-color 5s !important;
+  position: fixed;
+  width: 100%;
+
+  .navigation {
+    display: flex;
+    width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+    color: colors.$font-color-dirtywhite;
+    padding: 10px 30px;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-link-items a {
+    display: flex;
+    padding: 15px;
+    color: colors.$font-color-dirtywhite;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    @extend %button;
+  }
+}
+
+.nav-colored {
+  background-color: colors.$primary-bg;
+  color: #fff;
+}
+.nav-transparent {
+  background-color: transparent;
+}

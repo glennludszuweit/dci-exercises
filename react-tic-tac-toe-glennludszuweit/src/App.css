@@ -1,0 +1,15 @@
+body {
+  margin: 50px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #000;
+}
+
+.box-row {
+  display: flex;
+}

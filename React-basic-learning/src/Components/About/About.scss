@@ -1,0 +1,29 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+.about_company {
+  h2 {
+    text-align: center;
+    color: blue;
+    text-decoration: underline;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 20px;
+    margin-left: 40px;
+  }
+}
+.about_img {
+  h2 {
+    color: blue;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  img {
+    height: 300px;
+  }
+}

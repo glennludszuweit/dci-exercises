@@ -1,0 +1,31 @@
+body {
+  background: lightblue;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+img {
+}
+
+.hover-me {
+  width: 100px;
+
+  padding: 50px 0;
+  color: #fff;
+  line-height: 0;
+  background-color: pink;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 50px auto;
+  transition: 0.5s;
+}
+
+.hover-me:hover {
+  background: salmon;
+  transform: rotate(90deg);
+}

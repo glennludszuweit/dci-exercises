@@ -1,0 +1,22 @@
+.video {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+<<<<<<< HEAD
+@media screen and(max-width: 1024) {
+  .video {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100% 100%;
+    gap: 50px;
+=======
+/*responsive design */
+@media screen and (max-width: 950px) {
+  .video {
+    grid-template-columns: 1fr;
+>>>>>>> a62caf48b51ab7d40d3fdebc8eecfb1036a528a0
+  }
+}

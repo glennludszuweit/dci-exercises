@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fcdaaf;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.container {
+  margin: 200px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* FORM IMAGE */
+.form-img {
+  background-image: url("./form-img.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 60%;
+}
+
+/* FORM */
+.booking-form {
+  background-color: #111111;
+  color: #fff;
+}
+
+.booking-form h1 {
+  text-align: center;
+  padding: 50px;
+}
+
+.booking-form .form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.booking-form .form select {
+  color: #979797;
+}
+
+option {
+  padding: 15px;
+}
+
+.booking-form .form .form-group {
+  padding: 10px;
+  background-color: #111111;
+  border-bottom: 1px solid #979797;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin: 15px 50px;
+  width: 400px;
+}
+
+.booking-form .form .form-group:focus {
+  color: #eeb77f;
+  border-bottom: 2px solid #eeb77f;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.booking-form .dinning-space {
+  color: #eeb77f;
+  text-align: center;
+}
+
+.booking-form .space {
+  display: flex;
+  justify-content: center;
+}
+
+.booking-form .space .number {
+  padding: 15px 20px;
+  margin: 5px;
+  color: #111111;
+  background-color: #fff;
+  border-radius: 200px;
+  border: 2px solid #eeb77f;
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 80px;
+}
+
+.button-container .book-button {
+  padding: 25px;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #979797;
+  background-color: #eeb77f;
+  margin: 5px 0;
+  color: #fff;
+}
+
+.button-container small {
+  color: #eeb77f;
+}
